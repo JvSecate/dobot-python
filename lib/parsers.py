@@ -12,8 +12,8 @@ import struct
 # Format:
 # key = message id according to API reference
 # value[0] = parser for response to getters (direction=in, rw=0, isQueued=0)
-# value[1] = parser for response to setters (direction=in, rw=1, isQueued=0)
-# value[2] = parser for response to setters (direction=in, rw=1, isQueued=1)
+# value[1] = parser for response to getters (direction=in, rw=1, isQueued=0)
+# value[2] = parser for response to getters (direction=in, rw=1, isQueued=1)
 # value[3] = parser for request to setters (direction=out, rw=1, isQueued=0/1)
 
 parsers = {
@@ -78,7 +78,7 @@ parsers = {
     132: [lambda x: struct.unpack('<Bff', bytearray(x)), None, lambda x: struct.unpack('<Q', bytearray(x))[0], lambda x: list(struct.pack('<Bff', *x))],
     133: [lambda x: struct.unpack('<B' * 2, bytearray(x)), None, None, None],
     134: [lambda x: struct.unpack('<BH', bytearray(x)), None, None, None],
-    135: [None, None, lambda x: struct.unpack('<Q', bytearray(x))[0], lambda x: list(struct.pack('<BBf', *x))],
+    135: [None, None, lambda x: struct.unpack('<Q', bytearray(x))[0], lambda x: list(struct.pack('<BBi', *x))],
     137: [lambda x: struct.unpack('<B' * 3, bytearray(x)), None, lambda x: struct.unpack('<Q', bytearray(x))[0], lambda x: list(struct.pack('<' + 'B' * 3, *x))],
     138: [lambda x: struct.unpack('<B', bytearray(x)), None, lambda x: struct.unpack('<Q', bytearray(x))[0], lambda x: list(struct.pack('<' + 'B' * 3, *x))],
     # Calibration
@@ -93,7 +93,7 @@ parsers = {
     156: [lambda x: struct.unpack('<B' * 4, bytearray(x)), None, None, lambda x: list(struct.pack('<B' * 4, *x))],
     157: [lambda x: x[0] == 1, None, None, None],
     # Losing-step detection
-    170: [None, None, None, lambda x: list(struct.pack('<f', *x))],
+    170: [None, None, None, lambda x: list(struct.pack('<f', *x))], 
     171: [None, None, lambda x: struct.unpack('<Q', bytearray(x))[0], None],
     # Queued execution control
     240: [None, None, None, None],

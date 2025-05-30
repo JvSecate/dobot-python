@@ -5,8 +5,9 @@ sys.path.insert(0, os.path.abspath('.'))
 from time import sleep
 
 from lib.interface import Interface
+from config import DOBOT_SERIAL_PORT
 
-bot = Interface('/dev/tty.SLAB_USBtoUART')
+bot = Interface(DOBOT_SERIAL_PORT)
 
 # Defaults
 bot.set_jog_joint_params([20, 20, 20, 30], [100, 100, 100, 100])

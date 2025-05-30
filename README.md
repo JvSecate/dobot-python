@@ -8,11 +8,11 @@
 
 ```Bash
 # Clone the repository
-git clone https://github.com/AlexGustafsson/dobot-python
+
 # Enter the directory
-cd dobot-python
+
 # Run an example program
-python3 lib/test.py
+
 ```
 
 **Low-level interface**
@@ -56,16 +56,6 @@ bot.slide_to(-50, 10, 20, 0.5)
 ```
 
 ### Motivation
-
-The Dobot Magician seems like a fantastic robot arm. But my experience regarding its software and how to get it to work, or even access it, on different platforms have been one of the worst experiences I've had with a product.
-
-Their Python SDK seems to be built around wrappers of various DLLs or dynamically linked libraries which lack any source. It can therefore not be considered especially open source or cross-platform.
-
-The download server has been terrible, dropping downloads a few seconds in or reducing download speeds to a few KB/s. To make matters worse, their web site was hacked and redirected to a phishing website at the time of writing.
-
-Once I was able to access their Magician Studio for macOS - it was all in Chinese without any real option to change language. I have been unable to try the Windows version due to the aforementioned issues with their website.
-
-I was, however, able to access an API reference for their serial communication protocol which contained a lot of typos, duplicates, faulty numbers. But it was concise - so I decided to implement the protocol myself.
 
 Previous art is https://github.com/luismesas/pydobot which implements a small subset of the protocol.
 

@@ -5,8 +5,9 @@ sys.path.insert(0, os.path.abspath('.'))
 from time import sleep
 
 from lib.interface import Interface
+from config import DOBOT_SERIAL_PORT
 
-bot = Interface('/dev/tty.SLAB_USBtoUART')
+bot = Interface(DOBOT_SERIAL_PORT)
 
 print('Bot status:', 'connected' if bot.connected() else 'not connected')
 

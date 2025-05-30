@@ -3,8 +3,9 @@ import os
 sys.path.insert(0, os.path.abspath('.'))
 
 from lib.dobot import Dobot
+from config import DOBOT_SERIAL_PORT
 
-bot = Dobot('/dev/tty.SLAB_USBtoUART')
+bot = Dobot(DOBOT_SERIAL_PORT)
 
 print('Bot status:', 'connected' if bot.connected() else 'not connected')
 

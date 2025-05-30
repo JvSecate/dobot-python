@@ -5,7 +5,9 @@ sys.path.insert(0, os.path.abspath('.'))
 import math
 
 from lib.dobot import Dobot
-bot = Dobot('/dev/tty.SLAB_USBtoUART')
+from config import DOBOT_SERIAL_PORT
+
+bot = Dobot(DOBOT_SERIAL_PORT)
 
 print('Homing')
 #bot.home()
