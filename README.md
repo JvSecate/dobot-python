@@ -1,12 +1,21 @@
-# Dobot Python
-### A cross-platform low-level interface and high-level API for the Dobot Magician robotic arm written in Python 3
-***
+# Dobot Python :robot:
 
+Biblioteca Python para controle de braços robóticos Dobot (Magician, M1)
+
+[![PyPI Version](https://img.shields.io/pypi/v/dobot-python)](https://pypi.org/project/dobot-python/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+## :rocket: Recursos
+- Controle completo de posição (cartesiano/joints)
+- Suporte a ferramentas (ventosa, garra, caneta laser)
+- Integração com esteira transportadora
+- Calibração automática
+- Protocolo serial otimizado
+
+## :wrench: Instalação
+```bash
+*pip install dobot-python*
 ### Setting up
-
-### Low-level Documentation
-
-### High-level API Documentation
 
 ##### Examples
 
